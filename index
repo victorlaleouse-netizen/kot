@@ -1,4 +1,4 @@
-html = r"""<!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -8,15 +8,12 @@ html = r"""<!doctype html>
   <style>
     :root{
       --bg:#07090f;
-      --panel:#0e1220;
-      --panel2:#0b1020;
       --text:#e9ecf4;
       --muted:#aeb6cf;
       --line:rgba(255,255,255,.10);
       --accent:#ff3b3b;
       --accent2:#3b82f6;
       --good:#22c55e;
-      --warn:#f59e0b;
       --shadow: 0 12px 40px rgba(0,0,0,.45);
       --radius: 18px;
       --radius2: 12px;
@@ -24,7 +21,6 @@ html = r"""<!doctype html>
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
-
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
     body{
@@ -38,11 +34,9 @@ html = r"""<!doctype html>
       font-family:var(--sans);
       line-height:1.55;
     }
-
     a{ color:inherit; text-decoration:none; }
     .container{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
-    /* Header */
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(12px);
@@ -53,10 +47,7 @@ html = r"""<!doctype html>
       display:flex; align-items:center; justify-content:space-between;
       gap:16px; padding:12px 0;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px; font-weight:800;
-      letter-spacing:.2px;
-    }
+    .brand{ display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px; }
     .logo{
       width:36px; height:36px; border-radius:12px;
       background: linear-gradient(135deg, rgba(255,59,59,.95), rgba(59,130,246,.95));
@@ -69,14 +60,10 @@ html = r"""<!doctype html>
       display:flex; align-items:center; gap:14px; flex-wrap:wrap;
       color:var(--muted); font-weight:600; font-size:14px;
     }
-    nav a{
-      padding:8px 10px; border-radius:12px;
-      transition: background .2s ease, color .2s ease;
-    }
+    nav a{ padding:8px 10px; border-radius:12px; transition: background .2s ease, color .2s ease; }
     nav a:hover{ background: rgba(255,255,255,.06); color:var(--text); }
-    .nav-cta{
-      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-    }
+    .nav-cta{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+
     .btn{
       border:1px solid var(--line);
       background: rgba(255,255,255,.05);
@@ -105,19 +92,14 @@ html = r"""<!doctype html>
       box-shadow: 0 18px 45px rgba(59,130,246,.14);
     }
 
-    /* Hero */
-    .hero{
-      padding:44px 0 18px;
-      position:relative;
-    }
+    .hero{ padding:44px 0 18px; position:relative; }
     .hero-grid{
       display:grid; gap:18px;
       grid-template-columns: 1.35fr .65fr;
       align-items:stretch;
     }
-    @media (max-width: 920px){
-      .hero-grid{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 920px){ .hero-grid{ grid-template-columns: 1fr; } }
+
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       border:1px solid var(--line);
@@ -153,23 +135,10 @@ html = r"""<!doctype html>
       background: var(--accent);
       box-shadow: 0 0 0 6px rgba(255,59,59,.18);
     }
-    h1{
-      margin:0 0 10px;
-      font-size:40px;
-      line-height:1.08;
-      letter-spacing:-.6px;
-    }
-    .subtitle{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:16px;
-      max-width: 68ch;
-    }
+    h1{ margin:0 0 10px; font-size:40px; line-height:1.08; letter-spacing:-.6px; }
+    .subtitle{ margin:0 0 18px; color:var(--muted); font-size:16px; max-width: 68ch; }
     .hero-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px; }
-    .mini{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:18px;
-    }
+    .mini{ display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
     .pill{
       border:1px dashed rgba(255,255,255,.16);
       background: rgba(0,0,0,.18);
@@ -190,23 +159,16 @@ html = r"""<!doctype html>
     .stat span{ color:var(--muted); font-weight:650; font-size:13px; }
     .stat small{ color:var(--muted); display:block; margin-top:6px; font-size:12px; }
 
-    /* Sections */
     section{ padding:34px 0; }
     .section-title{
       display:flex; align-items:flex-end; justify-content:space-between;
       gap:14px; flex-wrap:wrap;
       margin-bottom: 14px;
     }
-    h2{
-      margin:0;
-      font-size:26px;
-      letter-spacing:-.2px;
-    }
+    h2{ margin:0; font-size:26px; letter-spacing:-.2px; }
     .lead{ margin:0; color:var(--muted); max-width: 82ch; }
-    .grid{
-      display:grid; gap:14px;
-      grid-template-columns: repeat(12, 1fr);
-    }
+
+    .grid{ display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
     .col-6{ grid-column: span 6; }
     .col-4{ grid-column: span 4; }
     .col-8{ grid-column: span 8; }
@@ -215,11 +177,18 @@ html = r"""<!doctype html>
       .col-6,.col-4,.col-8{ grid-column: span 12; }
       h1{ font-size:34px; }
     }
-    .panel{ padding:18px; border-radius: var(--radius); border:1px solid var(--line); background: rgba(255,255,255,.04); }
+
+    .panel{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
     .panel h3{ margin:0 0 8px; font-size:18px; }
     .panel p{ margin:0; color:var(--muted); }
     .list{ margin:10px 0 0; padding:0 0 0 18px; color:var(--muted); }
     .list li{ margin:8px 0; }
+
     .tagrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
     .tag{
       font-family: var(--mono);
@@ -234,20 +203,13 @@ html = r"""<!doctype html>
     .tag.green{ color:#d7ffdf; border-color: rgba(34,197,94,.28); }
     .tag.blue{ color:#cfe2ff; border-color: rgba(59,130,246,.28); }
 
-    /* Tables */
     table{ width:100%; border-collapse:collapse; overflow:hidden; border-radius: 14px; }
-    th,td{
-      border-bottom:1px solid rgba(255,255,255,.10);
-      padding:12px 10px;
-      vertical-align:top;
-      font-size:14px;
-    }
+    th,td{ border-bottom:1px solid rgba(255,255,255,.10); padding:12px 10px; vertical-align:top; font-size:14px; }
     th{ text-align:left; color:#dbe3ff; font-weight:900; background: rgba(255,255,255,.04); }
     tr:hover td{ background: rgba(255,255,255,.03); }
     .muted{ color: var(--muted); }
     .nowrap{ white-space:nowrap; }
 
-    /* Bars */
     .bars{ display:grid; gap:10px; margin-top:12px; }
     .bar{
       display:flex; align-items:center; gap:10px;
@@ -258,13 +220,13 @@ html = r"""<!doctype html>
     }
     .bar label{ width: 210px; max-width: 45vw; color:var(--muted); font-weight:800; font-size:13px; }
     .meter{ flex:1; height:10px; border-radius: 999px; background: rgba(255,255,255,.10); overflow:hidden; }
-    .fill{ height:100%; width:0%; border-radius: 999px;
+    .fill{
+      height:100%; width:0%; border-radius: 999px;
       background: linear-gradient(90deg, rgba(59,130,246,.95), rgba(255,59,59,.85));
       transition: width 1.1s ease;
     }
     .bar b{ min-width:62px; text-align:right; font-family:var(--mono); }
 
-    /* Footer */
     footer{
       padding:26px 0 40px;
       border-top:1px solid var(--line);
@@ -272,7 +234,6 @@ html = r"""<!doctype html>
       font-size:13px;
     }
 
-    /* Modal */
     .modal{
       position:fixed; inset:0; z-index:100;
       display:none;
@@ -296,24 +257,14 @@ html = r"""<!doctype html>
       border-bottom:1px solid rgba(255,255,255,.10);
     }
     .modal-head h3{ margin:0; font-size:18px; }
-    .x{
-      border:none; background:transparent; color:var(--text);
-      font-size:22px; cursor:pointer; opacity:.8;
-    }
+    .x{ border:none; background:transparent; color:var(--text); font-size:22px; cursor:pointer; opacity:.8; }
     .x:hover{ opacity:1; }
     .modal-body{ padding:16px; color:var(--muted); }
-    .form{
-      display:grid; grid-template-columns: 1fr 1fr; gap:12px;
-      margin-top: 12px;
-    }
-    @media(max-width:720px){
-      .form{ grid-template-columns: 1fr; }
-    }
-    .field{
-      display:flex; flex-direction:column; gap:6px;
-    }
+    .form{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top: 12px; }
+    @media(max-width:720px){ .form{ grid-template-columns: 1fr; } }
+    .field{ display:flex; flex-direction:column; gap:6px; }
     .field label{ font-weight:900; color:#dbe3ff; font-size:12px; letter-spacing:.2px; }
-    .field input, .field textarea, .field select{
+    .field input, .field textarea{
       border:1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.04);
       color: var(--text);
@@ -328,7 +279,6 @@ html = r"""<!doctype html>
       padding: 0 16px 16px;
     }
 
-    /* Print-friendly (optional) */
     @media print{
       header, .hero-actions, .nav-cta, .btn, .modal{ display:none !important; }
       body{ background:#fff; color:#000; }
@@ -415,7 +365,6 @@ html = r"""<!doctype html>
     </div>
   </div>
 
-  <!-- SECTION: ORIGINE / CONCEPT -->
   <section id="origine">
     <div class="container">
       <div class="section-title">
@@ -441,7 +390,7 @@ html = r"""<!doctype html>
           <h3>Le concept KOT</h3>
           <p>
             Application mobile communautaire dédiée au football :
-            notation des matchs (comme un film/série), réactions en direct via Fan Zone, partage de moments marquants, et création/rejoindre des communautés.
+            notation des matchs, réactions en direct via Fan Zone, partage de moments marquants, et communautés.
           </p>
           <div class="tagrow">
             <span class="tag red">Fan Zone</span>
@@ -453,29 +402,20 @@ html = r"""<!doctype html>
 
         <div class="panel col-4">
           <h3>Innovation</h3>
-          <p>
-            KOT ne se limite pas aux stats : elle ajoute la dimension sociale et émotionnelle au cœur de l’expérience.
-            Les données chiffrées sont complétées par le ressenti des fans.
-          </p>
+          <p>KOT ajoute la dimension sociale et émotionnelle au cœur de l’expérience, en complément des stats.</p>
         </div>
         <div class="panel col-4">
           <h3>Différenciation</h3>
-          <p>
-            Contrairement aux apps orientées info/data, KOT met l’engagement communautaire au premier plan, avec une interface pensée pour le live match.
-          </p>
+          <p>Contrairement aux apps orientées info/data, KOT met l’engagement communautaire au premier plan.</p>
         </div>
         <div class="panel col-4">
           <h3>Le nom</h3>
-          <p>
-            KOT = <b>Kick Off Together</b> (« donner le coup d’envoi ensemble »).
-            Court, mémorisable, non lié à un club/pays → potentiel international.
-          </p>
+          <p>KOT = <b>Kick Off Together</b> (« donner le coup d’envoi ensemble »). Potentiel international.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION: MARCHÉ -->
   <section id="marche">
     <div class="container">
       <div class="section-title">
@@ -487,31 +427,25 @@ html = r"""<!doctype html>
         <div class="panel col-8">
           <h3>Marché & tendances numériques</h3>
           <ul class="list">
-            <li>Le football rassemble des audiences très importantes (TV + stade) et une forte fidélité.</li>
-            <li>Le second écran est devenu une habitude : consultation de stats, réactions, contenus sociaux.</li>
-            <li>Les fans recherchent un sentiment d’appartenance : communautés sur X, TikTok, Discord, etc.</li>
-            <li>KOT centralise ces usages dans une application 100% football, structurée et communautaire.</li>
+            <li>Second écran : stats, réactions, contenus sociaux pendant le match</li>
+            <li>Forte recherche de communautés (X, TikTok, Discord…)</li>
+            <li>KOT centralise ces usages dans une app 100% football</li>
           </ul>
 
           <div class="bars" aria-label="Indicateurs d'usage">
-            <div class="bar" data-p="70"><label>Fans de sport sur téléphone pendant un match (est.)</label><div class="meter"><div class="fill"></div></div><b>≈70%</b></div>
+            <div class="bar" data-p="70"><label>Fans sur téléphone pendant un match (est.)</label><div class="meter"><div class="fill"></div></div><b>≈70%</b></div>
             <div class="bar" data-p="78"><label>Validation terrain : utilisation du téléphone</label><div class="meter"><div class="fill"></div></div><b>78%</b></div>
-            <div class="bar" data-p="69"><label>Validation terrain : apps de statistiques</label><div class="meter"><div class="fill"></div></div><b>69%</b></div>
-            <div class="bar" data-p="61"><label>Validation terrain : réseaux sociaux</label><div class="meter"><div class="fill"></div></div><b>61%</b></div>
-            <div class="bar" data-p="74"><label>Validation terrain : besoin d’une app centralisée</label><div class="meter"><div class="fill"></div></div><b>74%</b></div>
+            <div class="bar" data-p="74"><label>Besoin d’une app centralisée</label><div class="meter"><div class="fill"></div></div><b>74%</b></div>
           </div>
         </div>
 
         <div class="panel col-4">
           <h3>Opportunité</h3>
-          <p>
-            Les apps existantes répondent au besoin d’information (scores, stats, actu) mais pas à l’échange émotionnel structuré.
-            Les réseaux sociaux offrent l’instantané… mais c’est dispersé et peu dédié.
-          </p>
+          <p>Les apps existantes font l’info ; les réseaux sociaux font le live. KOT fait les deux, de façon dédiée et structurée.</p>
           <ul class="list">
-            <li><b>Place de marché</b> encore peu exploitée : “100% foot + communauté”</li>
-            <li><b>Moment clé</b> : l’activité explose pendant les matchs</li>
-            <li><b>Engagement</b> : gamification & fidélisation</li>
+            <li><b>Marché</b> encore peu exploité : “foot + communauté”</li>
+            <li><b>Pics</b> pendant les matchs</li>
+            <li><b>Engagement</b> via gamification</li>
           </ul>
         </div>
 
@@ -523,145 +457,92 @@ html = r"""<!doctype html>
                 <tr>
                   <th>Application</th>
                   <th>Positionnement</th>
-                  <th>Fonctionnalités</th>
                   <th>Points forts</th>
                   <th>Limites</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><b>OneFootball</b></td>
-                  <td>Actu football</td>
-                  <td class="muted">Actus, scores, notifs, vidéos, calendrier</td>
-                  <td class="muted">Contenu riche, couverture internationale</td>
-                  <td class="muted">Peu d’interactions entre fans, expérience passive</td>
-                </tr>
-                <tr>
-                  <td><b>SofaScore</b></td>
-                  <td>Data & statistiques</td>
-                  <td class="muted">Stats avancées, notes joueurs, live</td>
-                  <td class="muted">Très précise, appréciée des fans d’analyse</td>
-                  <td class="muted">Interface froide, faible dimension sociale</td>
-                </tr>
-                <tr>
-                  <td><b>LiveScore</b></td>
-                  <td>Résultats</td>
-                  <td class="muted">Scores rapides, alertes, calendrier</td>
-                  <td class="muted">Simplicité, vitesse d’info</td>
-                  <td class="muted">Pas de communauté, pas d’émotion</td>
-                </tr>
-                <tr>
-                  <td><b>Flashscore</b></td>
-                  <td>Multi-sports live</td>
-                  <td class="muted">Résultats, notifs, stats basiques</td>
-                  <td class="muted">Très utilisée en France</td>
-                  <td class="muted">Centrée info, peu d’interactions</td>
-                </tr>
-                <tr>
-                  <td><b>X (Twitter)</b></td>
-                  <td>Réseau social généraliste</td>
-                  <td class="muted">Réactions live, débats, humour</td>
-                  <td class="muted">Très réactif, fort engagement</td>
-                  <td class="muted">Contenus dispersés, pas structuré, pas dédié foot</td>
-                </tr>
-                <tr>
-                  <td><b>Instagram / TikTok</b></td>
-                  <td>Réseaux visuels</td>
-                  <td class="muted">Vidéos courtes, highlights, stories</td>
-                  <td class="muted">Forte viralité, émotion</td>
-                  <td class="muted">Pas pensé pour le live match structuré</td>
-                </tr>
-                <tr>
-                  <td><b style="color:var(--accent);">KOT</b></td>
-                  <td><b>Foot + communauté</b></td>
-                  <td class="muted"><b>Fan Zone</b>, notes matchs, communautés, gamification</td>
-                  <td class="muted">Centralise, structure, mélange analyse & émotion</td>
-                  <td class="muted">Déploiement progressif : focus MVP + modération</td>
-                </tr>
+                <tr><td><b>OneFootball</b></td><td>Actu</td><td class="muted">Contenu riche</td><td class="muted">Peu d’interactions</td></tr>
+                <tr><td><b>SofaScore</b></td><td>Stats</td><td class="muted">Très précise</td><td class="muted">Peu social</td></tr>
+                <tr><td><b>X / Instagram / TikTok</b></td><td>Social</td><td class="muted">Réactif, viral</td><td class="muted">Dispersé, pas dédié</td></tr>
+                <tr><td><b style="color:var(--accent);">KOT</b></td><td><b>Foot + communauté</b></td><td class="muted">Centralise + structure</td><td class="muted">Déploiement progressif + modération</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="muted" style="margin-top:10px;">
-            KOT se positionne comme la couche sociale manquante du football digital : un espace dédié, structuré, et pensé pour le live.
-          </p>
+          <p class="muted" style="margin-top:10px;">KOT = la couche sociale manquante du football digital : dédiée, structurée, pensée pour le live.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION: BUSINESS MODEL -->
   <section id="business">
     <div class="container">
       <div class="section-title">
         <h2>III — Business model</h2>
-        <p class="lead">Un modèle freemium “scalable” : adoption massive via la version gratuite, monétisation progressive via premium, pub et partenariats.</p>
+        <p class="lead">Freemium : adoption via le gratuit, monétisation via premium + pub + partenariats.</p>
       </div>
 
       <div class="grid">
         <div class="panel col-6">
           <h3>Freemium : gratuit + premium (2,99€/mois)</h3>
           <ul class="list">
-            <li><b>Gratuit :</b> suivi des matchs, réactions live, notes, communautés.</li>
-            <li><b>Premium :</b> stats détaillées, personnalisation, badges exclusifs, historique étendu…</li>
-            <li>Hypothèse prudente : <b>5%</b> d’utilisateurs payants (standard observé 3%–7%).</li>
+            <li><b>Gratuit :</b> live match, Fan Zone, notes, communautés</li>
+            <li><b>Premium :</b> stats détaillées, personnalisation, avantages</li>
+            <li>Hypothèse prudente : <b>5%</b> d’utilisateurs payants</li>
           </ul>
         </div>
 
         <div class="panel col-6">
           <h3>Sources de revenus</h3>
           <ul class="list">
-            <li><b>Abonnement premium</b> : revenus récurrents et prévisibles.</li>
-            <li><b>Publicité</b> sur version gratuite : pertinente avec l’activité pendant les matchs.</li>
-            <li><b>Partenariats</b> (clubs, marques, médias) : contenus sponsorisés / opérations ponctuelles.</li>
+            <li><b>Abonnement premium</b></li>
+            <li><b>Publicité</b> (version gratuite)</li>
+            <li><b>Partenariats</b> clubs / marques / médias</li>
           </ul>
         </div>
 
         <div class="panel col-4">
           <h3>Coûts principaux</h3>
-          <p>Développement & maintenance, infrastructure cloud, communication/marketing, frais de fonctionnement.</p>
+          <p>Dév & maintenance, infrastructure, marketing, fonctionnement.</p>
         </div>
 
         <div class="panel col-4">
-          <h3>Logique de rentabilité</h3>
-          <p>
-            Une fois l’app développée, la hausse d’utilisateurs augmente le CA plus vite que les coûts.
-            Modèle digital → économies d’échelle.
-          </p>
+          <h3>Logique</h3>
+          <p>Le CA augmente plus vite que les coûts : modèle digital → économies d’échelle.</p>
         </div>
 
         <div class="panel col-4">
-          <h3>Ce que finance l’investissement</h3>
+          <h3>Usage des fonds</h3>
           <ul class="list">
-            <li>Développement MVP & itérations</li>
-            <li>Infrastructure (serveurs, temps réel)</li>
-            <li>Acquisition utilisateurs (marketing)</li>
-            <li>Process de modération & qualité des communautés</li>
+            <li>MVP + itérations</li>
+            <li>Infra temps réel</li>
+            <li>Acquisition utilisateurs</li>
+            <li>Modération & qualité</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION: FINANCES -->
   <section id="finances">
     <div class="container">
       <div class="section-title">
         <h2>IV — Hypothèses financières</h2>
-        <p class="lead">Hypothèses prudentes basées sur un modèle freemium : premium + pub, partenariats en complément à partir de l’année 2.</p>
+        <p class="lead">Hypothèses prudentes : premium + pub, partenariats en complément à partir de l’année 2.</p>
       </div>
 
       <div class="grid">
         <div class="panel col-6">
           <h3>Hypothèses clés</h3>
           <ul class="list">
-            <li>Prix premium : <b>2,99 €/mois</b> (35,88 €/an)</li>
-            <li>Conversion premium : <b>5%</b> des utilisateurs actifs</li>
-            <li>Revenu pub moyen : <b>1,20 €</b> / utilisateur gratuit / an</li>
-            <li>Partenariats : <b>10 000 €</b>/an à partir de l’année 2 (hypothèse prudente)</li>
+            <li>Premium : <b>2,99 €/mois</b> (35,88 €/an)</li>
+            <li>Conversion premium : <b>5%</b></li>
+            <li>Pub : <b>1,20 €</b> / utilisateur gratuit / an</li>
+            <li>Partenariats : <b>10 000 €</b>/an à partir de l’année 2</li>
           </ul>
           <div class="tagrow">
-            <span class="tag blue">Revenus récurrents</span>
-            <span class="tag red">Pics d’activité match</span>
+            <span class="tag blue">Récurrent</span>
+            <span class="tag red">Pics match</span>
             <span class="tag green">Scalable</span>
           </div>
         </div>
@@ -669,18 +550,16 @@ html = r"""<!doctype html>
         <div class="panel col-6">
           <h3>Charges annuelles (hypothèses)</h3>
           <ul class="list">
-            <li>Développement initial : <b>40 000 €</b> (année 1), puis maintenance <b>15 000 €/an</b></li>
-            <li>Infra/Cloud : <b>5 000 €</b> (A1), <b>8 000 €</b> (A2), <b>12 000 €</b> (A3)</li>
+            <li>Dév initial : <b>40 000 €</b> (A1), puis maintenance <b>15 000 €/an</b></li>
+            <li>Infra : <b>5 000 €</b> (A1), <b>8 000 €</b> (A2), <b>12 000 €</b> (A3)</li>
             <li>Marketing : <b>10 000 €</b> (A1), <b>15 000 €</b> (A2), <b>20 000 €</b> (A3)</li>
-            <li>Frais fonctionnement : <b>5 000 €/an</b></li>
+            <li>Fonctionnement : <b>5 000 €/an</b></li>
           </ul>
-          <p class="muted" style="margin-top:10px;">
-            Charges totales estimées : <b>60 k€</b> (A1), <b>43 k€</b> (A2), <b>52 k€</b> (A3).
-          </p>
+          <p class="muted" style="margin-top:10px;">Charges totales estimées : <b>60 k€</b> (A1), <b>43 k€</b> (A2), <b>52 k€</b> (A3).</p>
         </div>
 
         <div class="panel col-12">
-          <h3>Tableau de synthèse financière (3 ans)</h3>
+          <h3>Synthèse financière (3 ans)</h3>
           <div style="overflow:auto;">
             <table aria-label="Synthèse financière sur trois ans">
               <thead>
@@ -694,139 +573,101 @@ html = r"""<!doctype html>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><b>Année 1</b></td>
-                  <td>35 000 €</td>
-                  <td>60 000 €</td>
-                  <td>-25 000 €</td>
-                  <td>5 000 €</td>
-                  <td>-25 000 €</td>
-                </tr>
-                <tr>
-                  <td><b>Année 2</b></td>
-                  <td>80 000 €</td>
-                  <td>43 000 €</td>
-                  <td>37 000 €</td>
-                  <td>8 000 €</td>
-                  <td>-5 000 €</td>
-                </tr>
-                <tr>
-                  <td><b>Année 3</b></td>
-                  <td>156 000 €</td>
-                  <td>52 000 €</td>
-                  <td>104 000 €</td>
-                  <td>12 000 €</td>
-                  <td style="color:var(--good); font-weight:900;">+30 000 €</td>
-                </tr>
+                <tr><td><b>Année 1</b></td><td>35 000 €</td><td>60 000 €</td><td>-25 000 €</td><td>5 000 €</td><td>-25 000 €</td></tr>
+                <tr><td><b>Année 2</b></td><td>80 000 €</td><td>43 000 €</td><td>37 000 €</td><td>8 000 €</td><td>-5 000 €</td></tr>
+                <tr><td><b>Année 3</b></td><td>156 000 €</td><td>52 000 €</td><td>104 000 €</td><td>12 000 €</td><td style="color:var(--good); font-weight:900;">+30 000 €</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="muted" style="margin-top:10px;">
-            Le BFR reste limité (modèle digital : encaissements rapides, pas de stock). La rentabilité est atteinte à partir de l’année 3 dans ces hypothèses.
-          </p>
+          <p class="muted" style="margin-top:10px;">BFR limité (modèle digital). Rentabilité visée à partir de l’année 3 dans ces hypothèses.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION: VALIDATION TERRAIN -->
   <section id="terrain">
     <div class="container">
       <div class="section-title">
         <h2>V — Validation terrain</h2>
-        <p class="lead">Objectif : confronter l’idée à la réalité et vérifier que le concept répond aux attentes. Cible prioritaire : fans 18–35 ans, smartphone + réseaux sociaux.</p>
+        <p class="lead">Cible : fans 18–35 ans. Objectif : vérifier l’usage “live + second écran” et l’intérêt pour une app centralisée.</p>
       </div>
 
       <div class="grid">
         <div class="panel col-6">
           <h3>Méthode</h3>
           <ul class="list">
-            <li>Interviews à la sortie de stades (Ligue 1 / Ligue 2) après les matchs</li>
-            <li>Actions autour des terrains de district (joueurs amateurs, supporters, accompagnants)</li>
-            <li>Sondage en ligne via QR code + sondage papier</li>
+            <li>Interviews sortie de stades</li>
+            <li>Actions autour des terrains amateurs</li>
+            <li>Sondage via QR + papier</li>
           </ul>
         </div>
 
         <div class="panel col-6">
           <h3>Résultats principaux</h3>
           <ul class="list">
-            <li><b>1412</b> personnes interrogées (profils variés)</li>
+            <li><b>1412</b> personnes interrogées</li>
             <li><b>78%</b> utilisent leur téléphone pendant les matchs</li>
-            <li><b>74%</b> estiment qu’une app centralisée répond à un besoin</li>
+            <li><b>74%</b> veulent une app centralisée</li>
             <li><b>81%</b> acceptent une version gratuite financée par la pub</li>
-            <li><b>19%</b> se disent prêts à payer une version premium (2,99€/mois jugé cohérent)</li>
+            <li><b>19%</b> prêts à payer (2,99€/mois jugé cohérent)</li>
           </ul>
         </div>
 
         <div class="panel col-12">
-          <h3>Ajustements envisagés</h3>
-          <p>
-            Les retours insistent sur : interface simple et fluide en live match, modération et qualité des communautés.
-            Approche recommandée : déploiement progressif (MVP) puis ajout de fonctionnalités avancées.
-          </p>
+          <h3>Ajustements</h3>
+          <p>Interface ultra simple en live + modération. Déploiement MVP puis ajout progressif des features avancées.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION: STATUT -->
   <section id="juridique">
     <div class="container">
       <div class="section-title">
         <h2>VI — Choix du statut juridique</h2>
-        <p class="lead">KOT est porté par deux associés et vise une croissance rapide : la structure doit être flexible et investisseur-friendly.</p>
+        <p class="lead">Structure flexible et investisseur-friendly : SAS.</p>
       </div>
 
       <div class="grid">
         <div class="panel col-12">
           <h3>Pourquoi une SAS ?</h3>
           <ul class="list">
-            <li>Répartition claire du capital entre fondateurs + évolutivité</li>
-            <li>Liberté statutaire (pacte d’associés, droits spécifiques, clauses de sortie)</li>
-            <li>Responsabilité limitée aux apports → protection du patrimoine</li>
-            <li>Facilite l’entrée d’investisseurs via émission d’actions</li>
-            <li>Dirigeant assimilé salarié (protection sociale)</li>
+            <li>Capital évolutif, entrée d’investisseurs facilitée</li>
+            <li>Liberté statutaire (pacte, clauses)</li>
+            <li>Responsabilité limitée aux apports</li>
+            <li>Dirigeant assimilé salarié</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION: INVESTIR -->
   <section id="investir">
     <div class="container">
       <div class="section-title">
         <h2>Investir dans KOT</h2>
-        <p class="lead">Deux options simples : (1) investir via un lien de souscription, ou (2) demander un échange + documents (term sheet, pacte, etc.).</p>
+        <p class="lead">Option 1 : lien. Option 2 : contact (mail auto).</p>
       </div>
 
       <div class="grid">
         <div class="panel col-6">
           <h3>Option 1 — Lien de souscription</h3>
-          <p>
-            Remplace ce lien par ton lien réel (Stripe Payment Link, plateforme de levée, formulaire de souscription, etc.).
-          </p>
+          <p>Remplace ce lien par ton lien réel (Stripe Payment Link / plateforme / formulaire).</p>
           <div class="hero-actions" style="margin-top:12px;">
             <a class="btn primary" href="https://exemple-lien-investissement.com" target="_blank" rel="noopener">Investir via le lien</a>
             <button class="btn" id="copyLink" type="button">Copier le lien</button>
           </div>
-          <p class="muted" style="margin-top:10px;">
-            Astuce : si tu utilises un lien Stripe, colle ici ton URL “buy.stripe.com/…”.
-          </p>
+          <p class="muted" style="margin-top:10px;">Astuce : si tu utilises Stripe, colle ici ton URL “buy.stripe.com/…”.</p>
         </div>
 
         <div class="panel col-6">
           <h3>Option 2 — Prendre contact</h3>
-          <p>
-            Laisse tes coordonnées : on te recontacte avec les éléments nécessaires (deck, annexes, modalités).
-          </p>
+          <p>Laisse tes coordonnées : on te recontacte avec les docs (deck, pacte, modalités).</p>
           <div class="hero-actions" style="margin-top:12px;">
             <button class="btn blue" id="openModalInvest" type="button">Je veux être recontacté</button>
             <a class="btn" href="mailto:contact@kot-app.fr?subject=Demande%20investissement%20KOT&body=Bonjour%2C%0A%0AJe%20souhaite%20%C3%A9changer%20au%20sujet%20du%20projet%20KOT.%0A%0A-%20Nom%20%3A%20%0A-%20T%C3%A9l%C3%A9phone%20%3A%20%0A-%20Montant%20envisag%C3%A9%20%3A%20%0A-%20Disponibilit%C3%A9s%20%3A%20%0A%0AMerci%2C">Envoyer un mail</a>
           </div>
-          <p class="muted" style="margin-top:10px;">
-            Remplace <span style="font-family:var(--mono);">contact@kot-app.fr</span> par ton email réel.
-          </p>
+          <p class="muted" style="margin-top:10px;">Remplace <span style="font-family:var(--mono);">contact@kot-app.fr</span> par ton email réel.</p>
         </div>
 
         <div class="panel col-12">
@@ -834,13 +675,6 @@ html = r"""<!doctype html>
           <p class="muted">
             Cette page est une présentation du projet KOT. Elle ne constitue pas un conseil en investissement.
             Tout investissement comporte des risques (perte partielle ou totale du capital). Toute souscription se fera via des documents légaux adaptés.
-          </p>
-        </div>
-
-        <div class="panel col-12">
-          <h3>Bibliographie (extraits du dossier)</h3>
-          <p class="muted">
-            Bbx (2025) • Big News Network (2025) • Cunningham &amp; (2017) • De Boeck (s.d.) • Guidiri (2014) • Helleu (2023) • Le Moigne (2022) • Wikipédia (s.d.)
           </p>
         </div>
       </div>
@@ -863,7 +697,6 @@ html = r"""<!doctype html>
   </div>
 </footer>
 
-<!-- Modal -->
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal-card">
     <div class="modal-head">
@@ -871,9 +704,7 @@ html = r"""<!doctype html>
       <button class="x" id="closeModal" aria-label="Fermer">×</button>
     </div>
     <div class="modal-body">
-      <div>
-        Remplis ce formulaire : un email sera généré automatiquement (ou tu peux brancher un outil type Typeform/HubSpot).
-      </div>
+      <div>Remplis ce formulaire : un email sera généré automatiquement.</div>
 
       <form class="form" id="investForm">
         <div class="field">
@@ -906,10 +737,9 @@ html = r"""<!doctype html>
 </div>
 
 <script>
-  // Year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Bars animation on view
+  // Bars animation
   const bars = document.querySelectorAll('.bar');
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
@@ -954,7 +784,7 @@ html = r"""<!doctype html>
     }
   });
 
-  // Mailto generator (replace email target below)
+  // Mailto generator (replace email below)
   const INVEST_EMAIL = "contact@kot-app.fr"; // <-- à remplacer
   document.getElementById('sendMail').addEventListener('click', ()=>{
     const form = document.getElementById('investForm');
@@ -985,8 +815,3 @@ html = r"""<!doctype html>
 </script>
 </body>
 </html>
-"""
-path = "/mnt/data/kot-site-investisseur.html"
-with open(path, "w", encoding="utf-8") as f:
-    f.write(html)
-path
